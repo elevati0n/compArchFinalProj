@@ -118,7 +118,7 @@ module processor(
 		.shifted  (aluAddB ));		//  output [31:0]
 	
 	  wire [31:0] aluAddresult;
-	  
+
 	alu aluAdd (
 		//instr mux 0
 		.aluresult  (aluAddresult ), // output [31:0]
