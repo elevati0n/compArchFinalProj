@@ -1,0 +1,53 @@
+# Current time Sun Dec 13 04:23:21 2015
+# ModelSim Stack Trace
+# Program = vish
+# Id = "10.0d"
+# Version = "2012.01"
+# Date = "Jan 18 2012"
+# Platform = linuxpe
+# 0    0xf77a5430: '<unknown (@0xf77a5430)>'
+# 1    0xf77a540b: '<unknown (@0xf77a540b)>'
+# 2    0x083fb6ea: 'Tcl_DoOneEvent + 0x10a' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 3    0x083a24a8: 'Tk_TkwaitObjCmd + 0x204' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 4    0x083b3989: 'TclEvalObjvInternal + 0x341' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 5    0x083d92bb: 'TclExprFloatError + 0x2a1b' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 6    0x083de3a3: 'TclCompEvalObj + 0x107' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 7    0x08403bf9: 'TclObjInterpProc + 0x24d' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 8    0x083b3989: 'TclEvalObjvInternal + 0x341' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 9    0x083d92bb: 'TclExprFloatError + 0x2a1b' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 10   0x083de3a3: 'TclCompEvalObj + 0x107' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 11   0x08403bf9: 'TclObjInterpProc + 0x24d' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 12   0x083b3989: 'TclEvalObjvInternal + 0x341' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 13   0x083d92bb: 'TclExprFloatError + 0x2a1b' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 14   0x083de3a3: 'TclCompEvalObj + 0x107' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 15   0x08403bf9: 'TclObjInterpProc + 0x24d' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 16   0x083b3989: 'TclEvalObjvInternal + 0x341' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 17   0x083b4e1d: 'Tcl_EvalEx + 0x1cd' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 18   0x083b58e3: 'Tcl_EvalObjEx + 0x5f' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 19   0x083b8f49: 'Tcl_EvalObjCmd + 0x45' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 20   0x083b3989: 'TclEvalObjvInternal + 0x341' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 21   0x083d92bb: 'TclExprFloatError + 0x2a1b' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 22   0x083de3a3: 'TclCompEvalObj + 0x107' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 23   0x083b591c: 'Tcl_EvalObjEx + 0x98' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 24   0x083b89cd: 'Tcl_CatchObjCmd + 0x81' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 25   0x083b3989: 'TclEvalObjvInternal + 0x341' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 26   0x083d92bb: 'TclExprFloatError + 0x2a1b' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 27   0x083de3a3: 'TclCompEvalObj + 0x107' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 28   0x083b591c: 'Tcl_EvalObjEx + 0x98' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 29   0x083bb77d: 'Tcl_IfObjCmd + 0x171' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 30   0x083b3989: 'TclEvalObjvInternal + 0x341' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 31   0x083b4e1d: 'Tcl_EvalEx + 0x1cd' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 32   0x083b5260: 'Tcl_Eval + 0x20' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 33   0x0817a917: 'strucItemGetVisibility + 0x717' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 34   0x083b21d7: 'TclInvokeStringCommand + 0x5f' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 35   0x083b3989: 'TclEvalObjvInternal + 0x341' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 36   0x083b4e1d: 'Tcl_EvalEx + 0x1cd' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 37   0x083f4001: 'Tcl_FSEvalFile + 0xfd' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 38   0x083f415d: 'Tcl_EvalFile + 0x29' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 39   0x0832be61: 'Tk_MainEx + 0x22d' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 40   0x08197e42: 'vish_inner_loop + 0x112' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 41   0x081999fb: 'main + 0xd2b' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# 42   0x00b3ed31: '_libc_start_main + 0xe1' in '/lib/libc.so.6'
+# 43   0x080bf65c: 'start + 0x1c' in '/COEnet/Linux/altera/12.0/modelsim_ase/bin/../linux/vish'
+# End of Stack Trace
+

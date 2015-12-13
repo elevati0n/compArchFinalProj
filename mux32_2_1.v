@@ -9,9 +9,9 @@
  */
 module mux32_2_1(
 	input s,
-	input [32:0] in0,
-	input [32:0] in1,
-	output reg [32:0] out
+	input [31:0] in0,
+	input [31:0] in1,
+	output reg [31:0] out
 	);
 
 	always@(s or in0 or in1)

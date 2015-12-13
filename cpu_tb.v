@@ -20,6 +20,10 @@ module cpu_tb;
 	and the output ports are instr (instruction memory read-out), data_out (data memory read-out).
 	 */
 	
+	  
+	wire [31:0] inst_addr, instr, data_addr, data_in, data_out;
+	wire mem_read, mem_write;
+	
 	Memory memory(
 			.inst_addr  (inst_addr ), // input   	[4*8:1]
 			.instr      (instr     ), // output  	[31:0]  
@@ -30,7 +34,9 @@ module cpu_tb;
 			.data_out   (data_out  ));// output 	[31:0]
 
 
-	proj1 processor(
+	processor proj1(
+	  .reset (reset), //input 
+	  .clk (clk), //input 
 		.inst_addr  (inst_addr ), // input [31:0]
 		.instr      (instr     ), // input [31:0]
 		.data_addr  (data_addr ), // input [31:0]
@@ -43,7 +49,7 @@ module cpu_tb;
 		clk = 0;
 		reset = 1;
 		#5 reset = 1;
-		#27 reset = 0; 
+		#21 reset = 0; 
 	end
 	
 	always 
