@@ -7,7 +7,7 @@
  * 
  * TODO: Add module documentation
  */
-module andGate(input in0, input in1, output reg out);
+module andGate(input in0, input in1, output out);
 	
 	always @(in0 or in1) begin
 		if ((in0 == 1 ) && (in1 == 1))

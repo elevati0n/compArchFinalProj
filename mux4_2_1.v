@@ -8,16 +8,16 @@
  * TODO: Add module documentation
  */
 module mux4_2_1(
-		input in0 [3:0],
-		input in1 [3:0],
+		input [3:0] in0,
+		input [3:0] in1,
 		input s,
-		output reg out [3:0]);
+		output reg [3:0] out);
 	
 	always@(s or in0 or in1)
-		if (s=1) begin
+		if (s==1) begin
 			out = in1;
 		end
-	else if (s=0) begin
+	else if (s==0) begin
 			out = in0;
 		end
 		

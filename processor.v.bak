@@ -55,7 +55,7 @@ module processor(
 		.data_a     (inst_addr), 	//input 32:0
 		.data_b     (4    ));		//input 32:0
 	
-	shiftleft2 shiftleft2_instr (
+	shiftleft2 shiftleft2 (
 		.shiftMe  (instr ), //input 32:0
 		.shifted  (jump_address )); //output 32:0s
 	
@@ -101,7 +101,7 @@ module processor(
 		.out  (writeReg));
 	
 	sign_extend sign_extend (
-		.extendMe  (instr[15:0]), //input 15:0
+		.extendMe  (inst[15:0]), //input 15:0
 		.extended  (shiftLeftIn)); //output 31:0
 	
 	shiftleft2 shiftleft2 (
@@ -118,7 +118,7 @@ module processor(
 		.data_a     (jump_result    ),  //input 31:0
 		.data_b     (aluAddB    )); //input 31:0
 		
-	mux32_2_1 mux32_2_1_b (
+	mux32_2_1 mux32_2_1 (
 		.s    (andGateOut   ), //input 
 		.in0  (jump_result ),  //input 31:0
 		.in1  (aluAddresult ), //input 31:0
@@ -138,7 +138,7 @@ module processor(
 		.s    (alusrc   ),  //input 
 		.out  (aluB )); //output 4:0 
 	
-	alu aluMain (
+	alu alu (
 		.aluresult  (data_addr ),	 //output 32:0
 		.zero       (zero      ),	 //output
 		.operation  (andIn1 ), 		//input 3:0
