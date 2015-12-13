@@ -30,7 +30,7 @@ module cpu_tb;
 			.data_out   (data_out  ));// output 	[31:0]
 
 
-	processor proj1(
+	proj1 processor(
 		.inst_addr  (inst_addr ), // input [31:0]
 		.instr      (instr     ), // input [31:0]
 		.data_addr  (data_addr ), // input [31:0]

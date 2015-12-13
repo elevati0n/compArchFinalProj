@@ -108,7 +108,7 @@ module processor(
 		.shiftMe  (shiftLeftIn ),  //input 31:0
 		.shifted  (aluAddB ));		//output 31:0
 	
-	aluAdd alu (
+	alu aluAdd (
 		//instr mux 0
 		.aluresult  (aluAddresult ), //output 31:0
 	
