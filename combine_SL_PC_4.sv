@@ -9,12 +9,12 @@
  */
 
 module combineSLPC4(
-	input [31:0] in0,
-	input [31:0] in1,
+	input [4:0] aluPlus4,
+	input [25:0] instr,
 	output reg [31:0] out
 	); 
 
-	always @ (in0 or in1) begin 
-		out = {in0[29:0], 2'b00};
+	always @ (aluPlus4 or shiftout) begin 
+		out = {aluPlus4, instr, 2'b00};
 	end
 endmodule

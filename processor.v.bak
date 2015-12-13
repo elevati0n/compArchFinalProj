@@ -47,8 +47,7 @@ module processor(
 		.operation  (4'b0010 ), 	//input [3:0]
 		.data_a     (inst_addr), 	//input [31:0]
 		.data_b     (4    ));		//input [31:0]
-	
-	
+
 	shiftleft2 shiftleft2_instr (
 		.shiftMe  (instr ), //input [31:0]
 		.shifted  (jump_address )); //output [31:0]
@@ -110,6 +109,7 @@ module processor(
 		.extended  (shiftLeftIn)); // output [31:0]
 		
 		wire [31:0] aluAddB;
+		.extended  (shiftLeftIn)); //output 31:0
 	
 	shiftleft2 shiftleft2 (
 		.shiftMe  (shiftLeftIn ),  // input [31:0]
@@ -156,6 +156,21 @@ module processor(
 		.operation  (operation ), 		// input [3:0]
 		.data_a     (readData1    ),	 //  input [31:0]
 		.data_b     (aluB    ));	// input [31:0]
+		.funct      (instr[5:0]     ), //input[5:0]
+		.operation  (operation )); //output [3:0]
+	
+	mux4_2_1 mux4_2_bottom (
+		.in0  (readData2 ), //input 4:0
+		.in1  (shiftLeftIn ),  //input 4:0
+		.s    (alusrc   ),  //input 
+		.out  (aluB )); //output 4:0 
+	
+	alu aluMain (
+		.aluresult  (data_addr ),	 //output 32:0
+		.zero       (zero      ),	 //output
+		.operation  (andIn1 ), 		//input 3:0
+		.data_a     (readData1    ),	 //input 32:0
+		.data_b     (aluB    ));	//input 32:0
 	
 	andGate andGate (
 		.in0  (branch ), // input 

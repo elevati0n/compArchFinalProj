@@ -33,6 +33,9 @@ module processor(
 	
 	wire [31:0] jump_result, jump_address, jumpMux1, in0, next_addr;
 
+	wire [31:0] jump_result, jumpMux1, in0, next_addr;
+
+	wire [27:0] jump_address;
 	pc_counter pc_counter(
 		.clk      (clk     ), 	//	input 
 		.reset    (reset   ), 	//	input
@@ -48,7 +51,7 @@ module processor(
 		.data_a     (inst_addr), 	//input [31:0]
 		.data_b     (4    ));		//input [31:0]
 	
-	
+	/* combined the shift left and concating for jump
 	shiftleft2 shiftleft2_instr (
 		.shiftMe  (instr ), //input [31:0]
 		.shifted  (jump_address )); //output [31:0]
@@ -58,6 +61,14 @@ module processor(
 	combineSLPC4 combineSLPC4 (
 		.in0  (jump_result ), //input [31:0]
 		.in1  (alu_out ), //input [31:0]
+		.shiftMe  (instr[25:0] ), //input [25:0]
+		.shifted  (jump_address )); //output [27å:0]
+	*/
+	wire [31:0] alu_out;
+	
+	combineSLPC4 combineSLPC4 (
+		.aluPlus4  (jump_result ), //input [4:0]
+		.instr  (instr[25:0] ), //input [25:0]
 		.out  (jumpMux1 ));	//output [31:0]
 	
 	mux32_2_1 mux32_2_1 (
@@ -104,6 +115,7 @@ module processor(
 		.out  (writeReg)); //output [5:0]
 		
 		wire [31:0] shiftLeftIn;
+		wire [25:0] shiftLeftIn;
 	
 	sign_extend sign_extend (
 		.extendMe  (instr[15:0]), //    input [15:0]
@@ -117,6 +129,10 @@ module processor(
 	
 	  wire [31:0] aluAddresult;
 	  
+		.shiftMe  (shiftLeftIn ),  // input [29:0]
+		.shifted  (aluAddB ));		//  output [31:0]
+	
+	  wire [31:0] aluAddresult;
 	alu aluAdd (
 		//instr mux 0
 		.aluresult  (aluAddresult ), // output [31:0]

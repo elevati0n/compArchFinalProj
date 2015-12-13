@@ -8,7 +8,7 @@
  * TODO: Add module documentation
  */
 module shiftleft2(
-	input [31:0] shiftMe,
+	input [29:0] shiftMe,
 	output reg [31:0] shifted);
 
 	always @(shiftMe) begin

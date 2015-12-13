@@ -19,7 +19,6 @@ module cpu_tb;
 	(data memory write enable), mem_read (data memory read enable), data_in (data memory write value)
 	and the output ports are instr (instruction memory read-out), data_out (data memory read-out).
 	 */
-	
 	  
 	wire [31:0] inst_addr, instr, data_addr, data_in, data_out;
 	wire mem_read, mem_write;
@@ -33,10 +32,7 @@ module cpu_tb;
 			.mem_write  (mem_write ), // input
 			.data_out   (data_out  ));// output 	[31:0]
 
-
-	processor proj1(
-	  .reset (reset), //input 
-	  .clk (clk), //input 
+	proj1 processor(
 		.inst_addr  (inst_addr ), // input [31:0]
 		.instr      (instr     ), // input [31:0]
 		.data_addr  (data_addr ), // input [31:0]
