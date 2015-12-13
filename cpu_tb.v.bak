@@ -49,7 +49,7 @@ module cpu_tb;
 		clk = 0;
 		reset = 1;
 		#5 reset = 1;
-		#21 reset = 0; 
+		#27 reset = 0; 
 	end
 	
 	always 

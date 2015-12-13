@@ -1,0 +1,187 @@
+#  
+do /Users/Student/sflahert/compArch/compArchFinalProj/MinMax.hexdump
+# ** Error: invalid command name "00000000"
+# Error in macro /Users/Student/sflahert/compArch/compArchFinalProj/MinMax.hexdump line 1
+# invalid command name "00000000"
+#     while executing
+# "00000000  0b 00 00 00 0c 00 00 00  0d 00 00 00 13 00 00 00"
+vlib work
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/alu.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/aluCtrl.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module alu_control
+# 
+# Top level modules:
+# 	alu_control
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/andGate.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module andGate
+# 
+# Top level modules:
+# 	andGate
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/combine_SL_PC_4.sv
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module combineSLPC4
+# 
+# Top level modules:
+# 	combineSLPC4
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/cpu_tb.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module cpu_tb
+# 
+# Top level modules:
+# 	cpu_tb
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/ctrlUnit.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module controlunit
+# 
+# Top level modules:
+# 	controlunit
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/memory1.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module Memory
+# 
+# Top level modules:
+# 	Memory
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/mux2_1.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module mux2_1
+# 
+# Top level modules:
+# 	mux2_1
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/mux4_2_1.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module mux4_2_1
+# 
+# Top level modules:
+# 	mux4_2_1
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/mux32_2_1.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module mux32_2_1
+# 
+# Top level modules:
+# 	mux32_2_1
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/pcCounter.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module pc_counter
+# 
+# Top level modules:
+# 	pc_counter
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/processor.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module processor
+# 
+# Top level modules:
+# 	processor
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/reg_32.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module reg_32
+# 
+# Top level modules:
+# 	reg_32
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/reg_32_tb.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module reg_32_tb
+# 
+# Top level modules:
+# 	reg_32_tb
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/reg_file.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module reg_file
+# 
+# Top level modules:
+# 	reg_file
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/reg_file_tb.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module test_reg_file
+# 
+# Top level modules:
+# 	test_reg_file
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/mux2_1_tb.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module test_mux2_1
+# 
+# Top level modules:
+# 	test_mux2_1
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/mux4_2_1.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module mux4_2_1
+# 
+# Top level modules:
+# 	mux4_2_1
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/mux32_2_1.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module mux32_2_1
+# 
+# Top level modules:
+# 	mux32_2_1
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/pcCounter.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module pc_counter
+# 
+# Top level modules:
+# 	pc_counter
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/processor.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module processor
+# 
+# Top level modules:
+# 	processor
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/shiftleft2.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module shiftleft2
+# 
+# Top level modules:
+# 	shiftleft2
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/sign_extend.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module sign_extend
+# 
+# Top level modules:
+# 	sign_extend
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/tb_alu.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module problem6tb
+# 
+# Top level modules:
+# 	problem6tb
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/tb_aluCtrl.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module problem5tb
+# 
+# Top level modules:
+# 	problem5tb
+vlog -reportprogress 300 -work work /Users/Student/sflahert/compArch/compArchFinalProj/tb_ctrlUnit.v
+# Model Technology ModelSim ALTERA vlog 10.0d Compiler 2012.01 Jan 18 2012
+# -- Compiling module problem4tb
+# 
+# Top level modules:
+# 	problem4tb
+vsim work.cpu_tb
+# vsim work.cpu_tb 
+# Loading work.cpu_tb
+# Loading work.Memory
+# Loading work.processor
+# Loading work.pc_counter
+# Loading work.alu
+# Loading work.shiftleft2
+# Loading sv_std.std
+# Loading work.combineSLPC4
+# Loading work.mux32_2_1
+# Loading work.controlunit
+# Loading work.reg_file
+# Loading work.mux4_2_1
+# Loading work.sign_extend
+# Loading work.alu_control
+# Loading work.andGate
+add wave -r sim:/cpu_tb/*
+run -all
+# Break key hit 
+# Break in Module cpu_tb in file /Users/Student/sflahert/compArch/compArchFinalProj/cpu_tb.v
+# Can't move the Now cursor.
+# Can't move the Now cursor.
