@@ -15,10 +15,11 @@ module sign_extend(
 		//check sign bit 16th bit
 		begin if 
 				(extendMe[15] == 0) 
-			extended =  {16'b0000000000000000, extendMe};
+			extended =  {extendMe, 16'b0000000000000000};
 	
 		else if (extendMe[15] == 1)  
-			extended =  {16'b1111111111111111, extendMe};
+			extended =  {extendMe, 16'b1111111111111111};
+		end
 		
 		
 endmodule

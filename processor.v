@@ -8,17 +8,21 @@
  * TODO: Add module documentation
  */
  
-module processor(
+ 
+module Processor(
 	clk,
 	reset,
     inst_addr,
     instr,
 	data_addr,
-	data_in,
+	data_out,
 	mem_read,
 	mem_write,
-	data_out
+	data_in
 );
+
+
+
 		
 	// Interface
 	input clk;
@@ -26,16 +30,13 @@ module processor(
 	output [31:0]  inst_addr;
 	input  [31:0]  instr;
 	output [31:0]  data_addr;
-	output  [31:0]  data_in;
+	output  [31:0]  data_out;
 	output        mem_read;
 	output          mem_write;
-	input  [31:0]  data_out;
+	input  [31:0]  data_in;
 	
-	wire [31:0] jump_result, jump_address, jumpMux1, in0, next_addr;
+	wire [31:0] jumpMux1, next_addr, instr_add_4;
 
-	wire [31:0] jump_result, jumpMux1, in0, next_addr;
-
-	wire [27:0] jump_address;
 	pc_counter pc_counter(
 		.clk      (clk     ), 	//	input 
 		.reset    (reset   ), 	//	input
@@ -45,7 +46,7 @@ module processor(
 	
 	// alu +4 to address, always adds 4 to address
 	alu aluPLus4 (
-		.aluresult  (jump_result ), //output [31:0]
+		.aluresult  (instr_add_4), //output [31:0]
 		.zero       (      ), 		//
 		.operation  (4'b0010 ), 	//input [3:0]
 		.data_a     (inst_addr), 	//input [31:0]
@@ -67,13 +68,13 @@ module processor(
 	wire [31:0] alu_out;
 	
 	combineSLPC4 combineSLPC4 (
-		.aluPlus4  (jump_result ), //input [4:0]
+		.aluPlus4  (instr_add_4[31:28]), //input [4:0]
 		.instr  (instr[25:0] ), //input [25:0]
 		.out  (jumpMux1 ));	//output [31:0]
 	
 	mux32_2_1 mux32_2_1 (
 		.s    (jump	), // input
-		.in0  (in0 ), //input [31:0]
+		.in0  (alu_out ), //input [31:0]
 		.in1  (jumpMux1), //input [31:0] 
 		.out  (next_addr ));//  output [31:0]
 	
@@ -83,18 +84,18 @@ module processor(
 		.regdest   (regdest  ), //output
 		.jump      (jump     ), //output
 		.branch    (branch   ), //output
-		.memread   (memread  ), //output
+		.memread   (mem_read  ), //output
 		.memtoreg  (memtoreg ), //output
-		.memwrite  (memwrite ), //output
+		.memwrite  (mem_write ), //output
 		.alusrc    (alusrc   ), //output
 		.regwrite  (regWrite ), //output
 		.aluop     (aluop    ), //output [1:0]
 		.opcode    (instr[31:26]   )); //input [5:0]
 
 
-    wire [4:0] readReg1, readReg2, writeReg;  
+    wire [4:0] writeReg;  
     wire [31:0] writeData; 
-    wire  [31:0] readData1, readData2;
+    wire  [31:0] readData1;
 
 
 	reg_file reg_file (
@@ -105,7 +106,7 @@ module processor(
 		.regWrite   (regWrite  ),   // input
 		.clk        (clk       ),   // input
 		.readData1  (readData1 ),   // output [31:0]
-		.readData2  (readData2 ));  // output [31:0]
+		.readData2  (data_out ));  // output [31:0]
 	
 	//mux for write register
 	mux4_2_1 mux4_2_1 (
@@ -115,7 +116,6 @@ module processor(
 		.out  (writeReg)); //output [5:0]
 		
 		wire [31:0] shiftLeftIn;
-		wire [25:0] shiftLeftIn;
 	
 	sign_extend sign_extend (
 		.extendMe  (instr[15:0]), //    input [15:0]
@@ -124,13 +124,9 @@ module processor(
 		wire [31:0] aluAddB;
 	
 	shiftleft2 shiftleft2 (
-		.shiftMe  (shiftLeftIn ),  // input [31:0]
+		.shiftMe  (shiftLeftIn[29:0]),  // input [31:0]
 		.shifted  (aluAddB ));		//  output [31:0]
-	
-	  wire [31:0] aluAddresult;
-	  
-		.shiftMe  (shiftLeftIn ),  // input [29:0]
-		.shifted  (aluAddB ));		//  output [31:0]
+
 	
 	  wire [31:0] aluAddresult;
 	alu aluAdd (
@@ -139,13 +135,13 @@ module processor(
 	
 		.zero       (      ), //  output
 		//adder, same as jump + 4 
-		.operation  (4'b0010 ), //  output
-		.data_a     (jump_result    ),  //  input [31:0]
+		.operation  (4'b0010), //  output
+		.data_a     (instr_add_4  ),  //  input [31:0]
 		.data_b     (aluAddB    )); //input [31:0]
 		
 	mux32_2_1 mux32_2_1_b (
 		.s    (andGateOut   ), //input 
-		.in0  (jump_result ),  //input [31:0]
+		.in0  (instr_add_4 ),  //input [31:0]
 		.in1  (aluAddresult ), //input [31:0]
 		.out  (alu_out )); //output [31:0]
 	
@@ -159,12 +155,11 @@ module processor(
 	wire [31:0] aluB;
 	
 	mux32_2_1 mux32_2_bottom (
-		.in0  (readData2 ), //  input [31:0]
+		.in0  (data_out ), //  input [31:0]
 		.in1  (shiftLeftIn ),  // input [31:0]
 		.s    (alusrc   ),  //  input 
 		.out  (aluB )); //  output [31:0] 
-	
-	wire [3:0] andIn1;
+
 	
 	alu aluMain (
 		.aluresult  (data_addr ),	 // output [31:0]
@@ -181,7 +176,7 @@ module processor(
 	mux32_2_1 mux32_2_1data (
 		.s    (memtoreg   ), // input
 		.in0  (data_addr ),  // input [31:0]
-		.in1  (data_out ), 	 // input [31:0]
+		.in1  (data_in ), 	 // input [31:0]
 		.out  (writeData )); // output [31:0]
 	
 endmodule

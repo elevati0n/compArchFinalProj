@@ -7,12 +7,20 @@ output reg [31:0] readData1, readData2
 
 reg [31:0] regFile [31:0];
 
+//zero out all registers
+integer k;
+
+initial begin 
+  for (k = 0; k <= 31; k = k +1) 
+    regFile[k] <= 0;
+  end
+
 always@(readReg1 or readReg2) begin
 	 readData1 <= regFile[readReg1];
 	 readData2 <= regFile[readReg2];
 end
 
-always@(posedge clk) begin
+always@(negedge clk) begin
 	if(regWrite)
 		regFile[writeReg] <= writeData;
 end

@@ -7,9 +7,9 @@ entity processor is
         inst_addr       : out    vl_logic_vector(31 downto 0);
         instr           : in     vl_logic_vector(31 downto 0);
         data_addr       : out    vl_logic_vector(31 downto 0);
-        data_in         : out    vl_logic_vector(31 downto 0);
+        data_out        : out    vl_logic_vector(31 downto 0);
         mem_read        : out    vl_logic;
         mem_write       : out    vl_logic;
-        data_out        : in     vl_logic_vector(31 downto 0)
+        data_in         : in     vl_logic_vector(31 downto 0)
     );
 end processor;

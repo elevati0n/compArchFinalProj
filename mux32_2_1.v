@@ -14,7 +14,7 @@ module mux32_2_1(
 	output reg [31:0] out
 	);
 
-	always@(s or in0 or in1)
+	always @(s or in0 or in1)
 		if (s==1) begin
 			out = in1;
 		end

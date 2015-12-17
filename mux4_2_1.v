@@ -13,13 +13,13 @@ module mux4_2_1(
 		input s,
 		output reg [4:0] out);
 	
-	always@(s or in0 or in1)
+	always @(s or in0 or in1)
 		if (s==1) begin
 			out = in1;
-		end
-	else if (s==0) begin
+	 end 
+	 else begin 
 			out = in0;
-		end
+	 end
 		
 endmodule
 

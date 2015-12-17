@@ -20,10 +20,13 @@ module pc_counter(
 	always @(posedge clk) begin
 		if (reset == 1) 
 			begin
-				next_addr[31:0] = 32'h00003000;
+				current[31:0] = 32'h00003000;
 			end
+		else if !(next_addr == 32'hfc000000)
+		  current = next_addr; 		
+		  end 
 		else begin
-			next_addr = current; 		
+			exit(); 		
 		end
 	end
 		
